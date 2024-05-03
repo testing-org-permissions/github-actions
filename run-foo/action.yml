@@ -20,7 +20,7 @@ runs:
   - name: Checkout repo
     uses: actions/checkout@v5
     with:
-      repository: 'remote-trigger-test-TARGET'
+      repository: 'testing-org-permissions/target'
 
   - name: Run code
     run: |
