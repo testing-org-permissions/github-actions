@@ -3,10 +3,10 @@ name: run-foo
 inputs:
   x:
     required: true
-    default: 5.5
+    default: 5
   y:
     required: true
-    default: 6.6
+    default: 6
 
 runs:
   using: "composite"
