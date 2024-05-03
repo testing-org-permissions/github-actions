@@ -1,0 +1,30 @@
+name: run-foo
+
+inputs:
+  x:
+    required: true
+    default: 5.5
+  y:
+    required: true
+    default: 6.6
+
+runs:
+  using: "composite"
+  steps:
+
+  - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: '3.10'
+
+  - name: Checkout repo
+    uses: actions/checkout@v5
+    with:
+      repository: 'remote-trigger-test-TARGET'
+
+  - name: Run code
+    run: |
+      python foo.py ${{ inputs.x }} ${{ inputs.y }}
+    shell: bash
+
+
